@@ -45,11 +45,11 @@ RUN \
     && cd / \
     && rm -rf /tmp/* \
 
-    && echo "user=root" > /etc/dnsmasq.conf \
-    && echo 'domain-needed' >> /etc/dnsmasq.conf \
-    && echo 'listen-address=127.0.0.1' >> /etc/dnsmasq.conf \
-    && echo 'resolv-file=/etc/resolv.conf' >> /etc/dnsmasq.conf \
-    && echo 'conf-dir=/etc/dnsmasq.d' >> /etc/dnsmasq.conf
+    # && echo "user=root" > /etc/dnsmasq.conf \
+    # && echo 'domain-needed' >> /etc/dnsmasq.conf \
+    # && echo 'listen-address=127.0.0.1' >> /etc/dnsmasq.conf \
+    # && echo 'resolv-file=/etc/resolv.conf' >> /etc/dnsmasq.conf \
+    # && echo 'conf-dir=/etc/dnsmasq.d' >> /etc/dnsmasq.conf \
 
     && useradd www \
     && echo "www:www" | chpasswd \
