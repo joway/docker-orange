@@ -48,12 +48,8 @@ RUN \
     && echo "user=root" > /etc/dnsmasq.conf \
     && echo 'domain-needed' >> /etc/dnsmasq.conf \
     && echo 'listen-address=127.0.0.1' >> /etc/dnsmasq.conf \
-    && echo 'resolv-file=/etc/resolv.dnsmasq.conf' >> /etc/dnsmasq.conf \
-    && echo 'conf-dir=/etc/dnsmasq.d' >> /etc/dnsmasq.conf \
-    # This upstream dns server will cause some issues
-    && echo 'INTERNAL_DNS' >> /etc/resolv.dnsmasq.conf \
-    && echo 'nameserver 8.8.8.8' >> /etc/resolv.dnsmasq.conf \
-    && echo 'nameserver 8.8.4.4' >> /etc/resolv.dnsmasq.conf \
+    && echo 'resolv-file=/etc/resolv.conf' >> /etc/dnsmasq.conf \
+    && echo 'conf-dir=/etc/dnsmasq.d' >> /etc/dnsmasq.conf
 
     && useradd www \
     && echo "www:www" | chpasswd \
